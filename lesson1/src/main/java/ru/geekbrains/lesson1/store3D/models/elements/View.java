@@ -19,4 +19,8 @@ public abstract class View {
         return angle;
     }
 
+    public abstract void rotate(Angle3D angle);
+
+    public abstract void move(Point3D point);
+
 }

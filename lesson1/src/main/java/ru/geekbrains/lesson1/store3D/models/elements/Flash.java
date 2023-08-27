@@ -43,11 +43,11 @@ public class Flash extends View {
         this.power = power;
     }
 
-    public void rotateFlash(Angle3D angle) {
+    public void rotate(Angle3D angle) {
         this.angle = angle;
     }
 
-    public void moveFlash(Point3D point) {
+    public void move(Point3D point) {
         this.location = point;
     }
 }

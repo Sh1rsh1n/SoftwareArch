@@ -18,11 +18,11 @@ public class Camera extends View {
         return angle;
     }
 
-    public void rotateCamera(Angle3D angle) {
+    public void rotate(Angle3D angle) {
         this.angle = angle;
     }
 
-    public void moveCamera(Point3D point) {
+    public void move(Point3D point) {
         this.location = point;
     }
 

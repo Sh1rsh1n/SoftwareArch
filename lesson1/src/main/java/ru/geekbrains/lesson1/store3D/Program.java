@@ -21,7 +21,7 @@ public class Program {
         List<Poligon> poligons = new ArrayList<>();
         poligons.add(p1);
         PoligonalModel poligonalModel = new PoligonalModel(poligons);
-        store.add(poligonalModel);
+
 
     }
 
