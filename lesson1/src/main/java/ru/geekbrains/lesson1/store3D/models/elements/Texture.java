@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson1.store3D.models;
+package ru.geekbrains.lesson1.store3D.models.elements;
 
 public class Texture {
 

@@ -1,7 +1,7 @@
 package ru.geekbrains.lesson1.store3D.inmemory;
 
-import ru.geekbrains.lesson1.store3D.models.Camera;
-import ru.geekbrains.lesson1.store3D.models.Flash;
+import ru.geekbrains.lesson1.store3D.models.elements.Camera;
+import ru.geekbrains.lesson1.store3D.models.elements.Flash;
 import ru.geekbrains.lesson1.store3D.models.PoligonalModel;
 import ru.geekbrains.lesson1.store3D.models.Scene;
 
@@ -17,9 +17,21 @@ public class ModelStore implements IModelChanger {
     private List<Scene> scenes = new ArrayList<>();
     private List<Camera> cameras = new ArrayList<>();
 
-    public void add(PoligonalModel model){
+    public void add(PoligonalModel model, Scene scene, Flash flash, Camera camera){
         models.add(model);
+        flashes.add(flash);
+        scenes.add(scene);
+        cameras.add(camera);
         notifyChange();
+    }
+
+    public Scene getScene(int id) {
+        for (Scene scene : scenes) {
+            if (scene.getId() == id) {
+                return scene;
+            }
+        }
+        throw new RuntimeException("Неверный ID сцены");
     }
 
     @Override
@@ -38,4 +50,6 @@ public class ModelStore implements IModelChanger {
     public void RemoveModelChanger(ModelChangedObserver o) {
         observers.remove(o);
     }
+
+
 }

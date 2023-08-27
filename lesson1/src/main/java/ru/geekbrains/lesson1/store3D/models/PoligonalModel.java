@@ -1,5 +1,8 @@
 package ru.geekbrains.lesson1.store3D.models;
 
+import ru.geekbrains.lesson1.store3D.models.elements.Poligon;
+import ru.geekbrains.lesson1.store3D.models.elements.Texture;
+
 import java.util.List;
 
 public class PoligonalModel {

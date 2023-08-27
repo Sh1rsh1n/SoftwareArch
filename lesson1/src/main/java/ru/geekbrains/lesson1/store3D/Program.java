@@ -2,7 +2,7 @@ package ru.geekbrains.lesson1.store3D;
 
 import ru.geekbrains.lesson1.store3D.inmemory.ModelStore;
 import ru.geekbrains.lesson1.store3D.inmemory.Observer1;
-import ru.geekbrains.lesson1.store3D.models.Poligon;
+import ru.geekbrains.lesson1.store3D.models.elements.Poligon;
 import ru.geekbrains.lesson1.store3D.models.PoligonalModel;
 
 import java.util.ArrayList;

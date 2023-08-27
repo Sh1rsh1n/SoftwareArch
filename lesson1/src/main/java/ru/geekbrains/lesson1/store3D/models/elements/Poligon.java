@@ -1,4 +1,6 @@
-package ru.geekbrains.lesson1.store3D.models;
+package ru.geekbrains.lesson1.store3D.models.elements;
+
+import ru.geekbrains.lesson1.store3D.models.elements.Point3D;
 
 import java.util.List;
 
