@@ -1,9 +1,9 @@
-package ru.geekbrains.lesson2.builders;
+package ru.geekbrains.lesson2_builder.builders;
 
-import ru.geekbrains.lesson2.templates.TransportOrderTemplate;
-import ru.geekbrains.lesson2.pojo.Car;
+import ru.geekbrains.lesson2_builder.templates.CarOrderTemplate;
+import ru.geekbrains.lesson2_builder.pojo.Car;
 
-public class CarOrderBuilder implements TransportOrderTemplate {
+public class CarOrderBuilder implements CarOrderTemplate {
 
     private Car car;
 

@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson2.pojo;
+package ru.geekbrains.lesson2_builder.pojo;
 
 public class Car {
 

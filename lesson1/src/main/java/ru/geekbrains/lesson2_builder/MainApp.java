@@ -1,7 +1,7 @@
-package ru.geekbrains.lesson2;
+package ru.geekbrains.lesson2_builder;
 
-import ru.geekbrains.lesson2.builders.CarOrderBuilder;
-import ru.geekbrains.lesson2.pojo.Car;
+import ru.geekbrains.lesson2_builder.builders.CarOrderBuilder;
+import ru.geekbrains.lesson2_builder.pojo.Car;
 
 public class MainApp {
 
