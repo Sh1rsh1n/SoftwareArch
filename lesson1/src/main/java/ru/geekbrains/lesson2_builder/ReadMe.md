@@ -12,5 +12,8 @@
 3. Класс CarOrderBuilder, реализующий интерфейс CarOrderTemplate
 4. Пример работы программы находится в файле MainApp.java
 
-### Диаграмма
-![](files/CarBuilder.jpg)
+### Результат выполнения программы
+![](images/Result.png)
+
+### UML-Диаграмма
+![](images/CarBuilder.jpg)
