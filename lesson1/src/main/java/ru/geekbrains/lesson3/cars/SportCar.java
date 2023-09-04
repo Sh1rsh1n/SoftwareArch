@@ -1,9 +1,9 @@
-package ru.geekbrains.lesson3;
+package ru.geekbrains.lesson3.cars;
 
-import java.awt.*;
+import ru.geekbrains.lesson3.type_params.CarColor;
 
 public class SportCar extends Car {
-    public SportCar(String make, String model, Color color) {
+    public SportCar(String make, String model, CarColor color) {
         super(make, model, color);
         setWheelsCount(3);
     }

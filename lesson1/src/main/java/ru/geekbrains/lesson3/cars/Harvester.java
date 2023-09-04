@@ -1,13 +1,16 @@
-package ru.geekbrains.lesson3;
+package ru.geekbrains.lesson3.cars;
 
-import java.awt.*;
+import ru.geekbrains.lesson3.car_ability.Wiping;
+import ru.geekbrains.lesson3.car_ability.Fueling;
+import ru.geekbrains.lesson3.fuel_stations.Refueling;
+import ru.geekbrains.lesson3.type_params.CarColor;
 
 public class Harvester extends Car implements Fueling, Wiping {
 
 
     private Refueling refueling;
 
-    public Harvester(String make, String model, Color color) {
+    public Harvester(String make, String model, CarColor color) {
         super(make, model, color);
         setWheelsCount(6);
     }
@@ -20,9 +23,9 @@ public class Harvester extends Car implements Fueling, Wiping {
      * Заправить автомобиль
      */
     @Override
-    public void fuel() {
+    public void getFuel() {
         if (refueling != null){
-            refueling.fuel(fuelType);
+            refueling.fuelProvide(fuelType);
         }
     }
 

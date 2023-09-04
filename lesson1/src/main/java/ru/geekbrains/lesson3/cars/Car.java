@@ -1,12 +1,16 @@
-package ru.geekbrains.lesson3;
+package ru.geekbrains.lesson3.cars;
 
-import java.awt.*;
+import ru.geekbrains.lesson3.type_params.CarColor;
+import ru.geekbrains.lesson3.type_params.CarType;
+import ru.geekbrains.lesson3.type_params.FuelType;
+import ru.geekbrains.lesson3.type_params.GearboxType;
+
 
 public abstract class Car {
 
     //region Constructors
 
-    public Car(String make, String model, Color color) {
+    public Car(String make, String model, CarColor color) {
         this.make = make;
         this.model = model;
         this.color = color;
@@ -54,7 +58,7 @@ public abstract class Car {
     private String model;
 
     // Цвет
-    private Color color;
+    private CarColor color;
 
     // Тип
     protected CarType type;

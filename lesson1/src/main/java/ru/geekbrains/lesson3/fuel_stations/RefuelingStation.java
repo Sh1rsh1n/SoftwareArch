@@ -1,8 +1,11 @@
-package ru.geekbrains.lesson3;
+package ru.geekbrains.lesson3.fuel_stations;
 
-public class RefuelingStationV2 implements Refueling {
+import ru.geekbrains.lesson3.type_params.FuelType;
+
+public class RefuelingStation implements Refueling {
+
     @Override
-    public void fuel(FuelType fuelType) {
+    public void fuelProvide(FuelType fuelType) {
         switch (fuelType){
             case Diesel -> System.out.println("Заправка дизельным топливом");
             case Gasoline -> System.out.println("Заправка бензином");

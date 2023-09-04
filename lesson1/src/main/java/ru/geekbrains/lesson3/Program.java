@@ -1,6 +1,6 @@
 package ru.geekbrains.lesson3;
 
-import java.awt.*;
+import ru.geekbrains.lesson3.cars.Car;
 
 public class Program {
 
@@ -54,13 +54,7 @@ public class Program {
      */
     public static void main(String[] args) {
 
-        Harvester harvester = new Harvester("A", "B", Color.BLACK);
 
-        RefuelingStation refuelingStation = new RefuelingStation();
-
-        harvester.setRefuelingStation(refuelingStation);
-
-        harvester.fuel();
 
     }
 
