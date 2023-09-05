@@ -10,10 +10,12 @@ public abstract class Car {
 
     //region Constructors
 
-    public Car(String make, String model, CarColor color) {
-        this.make = make;
+    public Car(String brand, String model, CarType type, CarColor color, FuelType fuelType) {
+        this.brand = brand;
         this.model = model;
+        this.type = type;
         this.color = color;
+        this.fuelType = fuelType;
     }
 
     //endregion
@@ -26,17 +28,12 @@ public abstract class Car {
     public abstract void maintenance();
     // Переключение передач
     public abstract boolean gearShifting();
-    // Включение фар
-    public abstract boolean switchHeadlights();
     // Включение дворников
     public abstract boolean switchWipers();
 
-    // Подметать
-    //public abstract void sweeping();
-
-    public boolean switchFogLights(){
-        fogLights = !fogLights;
-        return fogLights;
+    public boolean switchLight(){
+        lightOn = !lightOn;
+        return lightOn;
     }
 
     protected void setWheelsCount(int wheelsCount){
@@ -46,13 +43,21 @@ public abstract class Car {
     public int getWheelsCount() {
         return wheelsCount;
     }
+    
+    public CarType getCarType() {
+        return type;
+    }
+    
+    publc FuelType getFuelType() {
+        return fuelType;
+    }
 
     //endregion
 
     //region Private Fields
 
     // Марка автомобиля
-    private String make;
+    private String brand;
 
     // Модель
     private String model;
@@ -61,13 +66,13 @@ public abstract class Car {
     private CarColor color;
 
     // Тип
-    protected CarType type;
+    private CarType type;
 
     // Число колес
     private int wheelsCount;
 
     // Тип топлива
-    protected FuelType fuelType;
+    private FuelType fuelType;
 
     // Тип коробки передач
     private GearboxType gearboxType;
@@ -76,7 +81,7 @@ public abstract class Car {
     private double engineCapacity;
 
     // Состояние противотуманных фар
-    private boolean fogLights = false;
+    private boolean lightOn = false;
 
 
     //endregion

@@ -3,8 +3,9 @@ package ru.geekbrains.lesson3.cars;
 import ru.geekbrains.lesson3.type_params.CarColor;
 
 public class SportCar extends Car {
-    public SportCar(String make, String model, CarColor color) {
-        super(make, model, color);
+
+    public SportCar(String brand, String model, CarColor color) {
+        super(brand, model, color);
         setWheelsCount(3);
     }
 

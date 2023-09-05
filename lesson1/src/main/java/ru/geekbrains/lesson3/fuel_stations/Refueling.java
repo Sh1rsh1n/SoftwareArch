@@ -10,6 +10,6 @@ public interface Refueling {
     /**
      * Заправка, передает топливо
      */
-    void fuelProvide(FuelType fuelType);
+    void refuel(FuelType fuelType);
 
 }

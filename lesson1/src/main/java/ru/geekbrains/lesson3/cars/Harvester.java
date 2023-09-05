@@ -5,13 +5,15 @@ import ru.geekbrains.lesson3.car_ability.Fueling;
 import ru.geekbrains.lesson3.fuel_stations.Refueling;
 import ru.geekbrains.lesson3.type_params.CarColor;
 
+
 public class Harvester extends Car implements Fueling, Wiping {
 
-
     private Refueling refueling;
+    
+    private Cleaning cleaning;
 
-    public Harvester(String make, String model, CarColor color) {
-        super(make, model, color);
+    public Harvester(String brand, String model, CarColor color) {
+        super(brand, model, color);
         setWheelsCount(6);
     }
 
