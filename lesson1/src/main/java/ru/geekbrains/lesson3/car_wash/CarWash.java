@@ -1,6 +1,10 @@
 package ru.geekbrains.lesson3.car_wash;
 
 
+import ru.geekbrains.lesson3.car_ability.Cleanable;
+import ru.geekbrains.lesson3.cars.Car;
+import ru.geekbrains.lesson3.type_params.CarType;
+
 public class CarWash implements Cleaning {
 
     private String washTitle;
@@ -12,19 +16,29 @@ public class CarWash implements Cleaning {
     public String getWashTitle(){
         return washTitle;
     }
-    
-    public void washCar(Cleanable cleanableCar){
-        int wt = waitTime(cleanableCar.getCarType);
-        System.out.printf("Детейлинг центр: %s \nМашина %s заехала на мойку\n", washTitle, cleanableCar);
+
+    @Override
+    public void washCar(Car<? extends Cleanable> car) {
+        int wt = waitTime(car.getCarType());
+        System.out.printf("Детейлинг центр: %s \nМашина <<%s %s>> заехала на мойку\n", washTitle, car.getBrand(), car.getModel());
         System.out.printf("Время ожидания = %d минут\n", wt);
-        System.timeout(wt * 100);
+        try {
+            Thread.sleep(wt * 100L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
-    
-    public void cleanCarInside(Cleanable cleanableCar){
-        int wt = waitTime(cleanableCar.getCarType);
-        System.out.printf("Детейлинг центр: %s \nМашина %s заехала на уборку салона\n", washTitle, cleanableCar);
+
+    @Override
+    public void cleanCarInside(Car<? extends Cleanable> car){
+        int wt = waitTime(car.getCarType());
+        System.out.printf("Детейлинг центр: %s \nМашина %s заехала на уборку салона\n", washTitle, car);
         System.out.printf("Время ожидания = %d минут\n", wt);
-        System.timeout(wt * 100);
+        try {
+            Thread.sleep(wt * 100L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
     
     private int waitTime(CarType type) {

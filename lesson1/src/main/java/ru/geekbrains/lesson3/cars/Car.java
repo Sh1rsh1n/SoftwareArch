@@ -1,12 +1,13 @@
 package ru.geekbrains.lesson3.cars;
 
+import ru.geekbrains.lesson3.car_ability.Cleanable;
 import ru.geekbrains.lesson3.type_params.CarColor;
 import ru.geekbrains.lesson3.type_params.CarType;
 import ru.geekbrains.lesson3.type_params.FuelType;
 import ru.geekbrains.lesson3.type_params.GearboxType;
 
 
-public abstract class Car {
+public abstract class Car<T> implements Cleanable {
 
     //region Constructors
 
@@ -36,6 +37,14 @@ public abstract class Car {
         return lightOn;
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
     protected void setWheelsCount(int wheelsCount){
         this.wheelsCount = wheelsCount;
     }
@@ -48,7 +57,7 @@ public abstract class Car {
         return type;
     }
     
-    publc FuelType getFuelType() {
+    public FuelType getFuelType() {
         return fuelType;
     }
 
@@ -87,5 +96,18 @@ public abstract class Car {
     //endregion
 
 
-
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", color=" + color +
+                ", type=" + type +
+                ", wheelsCount=" + wheelsCount +
+                ", fuelType=" + fuelType +
+                ", gearboxType=" + gearboxType +
+                ", engineCapacity=" + engineCapacity +
+                ", lightOn=" + lightOn +
+                '}';
+    }
 }

@@ -1,6 +1,11 @@
 package ru.geekbrains.lesson3;
 
+import ru.geekbrains.lesson3.car_wash.CarWash;
 import ru.geekbrains.lesson3.cars.Car;
+import ru.geekbrains.lesson3.cars.SportCar;
+import ru.geekbrains.lesson3.type_params.CarColor;
+import ru.geekbrains.lesson3.type_params.CarType;
+import ru.geekbrains.lesson3.type_params.FuelType;
 
 public class Program {
 
@@ -53,7 +58,11 @@ public class Program {
      * @param args
      */
     public static void main(String[] args) {
+        CarWash carWash = new CarWash("Моем чисто");
 
+        Car car = new SportCar("Ferrari", "Enzo", CarType.Sport, CarColor.RED, FuelType.Gasoline, 320);
+
+        carWash.washCar(car);
 
 
     }
