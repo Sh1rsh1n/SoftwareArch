@@ -25,13 +25,15 @@ public abstract class Car<T> implements Cleanable {
     private FuelType fuelType;
     
     // Текущая скорость
-    private int currentSpeed;
+    protected int currentSpeed;
     
     // максимальная скорость
     protected int maxSpeed;
 
     // уровень топлива
-    private float fuelLevel;
+    protected float fuelLevel;
+    
+    protected boolean needMaintenance;
 
 
     public Car(String brand, String model, BodyType bodyType, CarColor color, FuelType fuelType) {
@@ -42,6 +44,7 @@ public abstract class Car<T> implements Cleanable {
         this.fuelType = fuelType;
         currentSpeed = 0;
         fuelLevel = 1.0f;
+        needMaintenance = false;
     }
 
     // Движение
