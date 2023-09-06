@@ -1,11 +1,15 @@
 package ru.geekbrains.lesson3;
 
-import ru.geekbrains.lesson3.car_wash.CarWash;
-import ru.geekbrains.lesson3.cars.Car;
-import ru.geekbrains.lesson3.cars.SportCar;
-import ru.geekbrains.lesson3.type_params.CarColor;
-import ru.geekbrains.lesson3.type_params.CarType;
-import ru.geekbrains.lesson3.type_params.FuelType;
+import ru.geekbrains.lesson3.car_models.Car;
+import ru.geekbrains.lesson3.car_models.Pickup;
+import ru.geekbrains.lesson3.car_models.SportCar;
+import ru.geekbrains.lesson3.car_models.parameters.BodyType;
+import ru.geekbrains.lesson3.car_models.parameters.CarColor;
+import ru.geekbrains.lesson3.car_models.parameters.FuelType;
+import ru.geekbrains.lesson3.supports.detailing.CarWash;
+import ru.geekbrains.lesson3.supports.detailing.Cleaning;
+import ru.geekbrains.lesson3.supports.fuel_station.RefuelingStation;
+import ru.geekbrains.lesson3.supports.maintenance_station.MaintenanceStation;
 
 public class Program {
 
@@ -58,12 +62,16 @@ public class Program {
      * @param args
      */
     public static void main(String[] args) {
-        CarWash carWash = new CarWash("Моем чисто");
 
-        Car car = new SportCar("Ferrari", "Enzo", CarType.Sport, CarColor.RED, FuelType.Gasoline, 320);
+//        Car bmw = new SportCar("BMW", "M5", BodyType.COUPE, CarColor.GREEN, FuelType.GASOLINE, 250);
+//        Trip trip = new Trip(bmw, new RefuelingStation("Lukoil"), new CarWash("Super Detailing"), new MaintenanceStation("Official Dealer"), 15000);
+//
+//        trip.start();
 
-        carWash.washCar(car);
+        Car car = new Pickup("TOYOTA", "SEQUOYA", BodyType.PICKUP, CarColor.WHITE, FuelType.DIESEL);
 
+        Cleaning cleaning = new CarWash("self wash");
 
+        cleaning.washCar(car);
     }
 }

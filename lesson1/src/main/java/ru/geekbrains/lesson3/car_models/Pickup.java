@@ -7,24 +7,29 @@ import ru.geekbrains.lesson3.car_models.parameters.FuelType;
 
 import java.util.Random;
 
-public class SportCar extends Car {
+public class Pickup extends Car {
 
-    protected int maxSpeed;
+    private float dirtLevel;
 
-    private int maintenanceDistance;
-    
-    public SportCar(String brand, String model, BodyType bodyType, CarColor color, FuelType fuelType, int maxSpeed) {
+    private boolean extraMaintenance;
+
+    public Pickup(String brand, String model, BodyType bodyType, CarColor color, FuelType fuelType) {
         super(brand, model, bodyType, color, fuelType);
-        this.maxSpeed = maxSpeed;
-        maintenanceDistance = 3000;
+        this.extraMaintenance = false;
+        this.dirtLevel = 0.0f;
+
     }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
+    public float getDirtLevel() {
+        return dirtLevel;
     }
-    
+
+    public void setDirtLevel(float dirtLevel) {
+        this.dirtLevel = dirtLevel;
+    }
+
     @Override
-    public void movement(){
+    public void movement() {
         averageSpeed = new Random().nextInt(maxSpeed);
         System.out.printf("Средняя скорость км/ч: %d\n", averageSpeed);
 
@@ -33,16 +38,20 @@ public class SportCar extends Car {
 
         setFuelLevel(getFuelLevel() - ((float) averageSpeed / maxSpeed / 3));
         System.out.printf("Остаток топлива: %f бака\n", getFuelLevel());
-        
+
+        setDirtLevel(dirtLevel + averageSpeed / 100f);
+
+
     }
-    
+
     @Override
-    public void maintenance(){
-        if (getTripDistance() > maintenanceDistance) {
-            maintenanceDistance *= 2;
+    public void maintenance() {
+        if (extraMaintenance) {
+            extraMaintenance = false;
             setNeedMaintenance(true);
             System.out.println("Пора делать ТО");
         }
-        
     }
+
+
 }

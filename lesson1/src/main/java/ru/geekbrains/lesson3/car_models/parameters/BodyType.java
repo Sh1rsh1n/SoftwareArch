@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson3.type_params;
+package ru.geekbrains.lesson3.car_models.parameters;
 
 public enum BodyType {
 

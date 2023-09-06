@@ -1,9 +1,9 @@
-package ru.geekbrains.lesson3.car_wash;
+package ru.geekbrains.lesson3.supports.detailing;
 
 
-import ru.geekbrains.lesson3.car_ability.Cleanable;
-import ru.geekbrains.lesson3.cars.Car;
-import ru.geekbrains.lesson3.type_params.CarType;
+import ru.geekbrains.lesson3.car_models.Car;
+import ru.geekbrains.lesson3.car_models.abilities.Cleanable;
+import ru.geekbrains.lesson3.car_models.parameters.BodyType;
 
 public class CarWash implements Cleaning {
 
@@ -18,36 +18,42 @@ public class CarWash implements Cleaning {
     }
 
     @Override
-    public void washCar(Car<? extends Cleanable> car) {
-        int wt = waitTime(car.getCarType());
-        System.out.printf("Детейлинг центр: %s \nМашина <<%s %s>> заехала на мойку\n", washTitle, car.getBrand(), car.getModel());
-        System.out.printf("Время ожидания = %d минут\n", wt);
-        try {
-            Thread.sleep(wt * 100L);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+    public void washCar(Object obj) {
+        if (obj instanceof Cleanable) {
+            Car car = (Car) obj;
+            int wt = waitTime(car.getBodyType());
+            System.out.printf("Детейлинг центр: %s \nМашина << %s %s >> заехала на мойку\n", washTitle, car.getBrand(), car.getModel());
+            System.out.printf("Время ожидания = %d минут\n", wt);
+            try {
+                Thread.sleep(wt * 100L);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     @Override
-    public void cleanCarInside(Car<? extends Cleanable> car){
-        int wt = waitTime(car.getCarType());
-        System.out.printf("Детейлинг центр: %s \nМашина %s заехала на уборку салона\n", washTitle, car);
-        System.out.printf("Время ожидания = %d минут\n", wt);
-        try {
-            Thread.sleep(wt * 100L);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+    public void cleanCarInside(Object obj){
+        if (obj instanceof Cleanable) {
+            Car car = (Car) obj;
+            int wt = waitTime(car.getBodyType());
+            System.out.printf("Детейлинг центр: %s \nМашина << %s %s >> заехала на уборку салона\n", washTitle, car.getBrand(), car.getModel());
+            System.out.printf("Время ожидания = %d минут\n", wt);
+            try {
+                Thread.sleep(wt * 100L);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     
-    private int waitTime(CarType type) {
+    private int waitTime(BodyType type) {
         int time = 0;
         switch (type) {
-            case Sedan -> time = 30;
-            case Hatchback -> time = 25;
-            case Pickup -> time= 50;
-            case Sport -> time = 15;
+            case SEDAN -> time = 30;
+            case HATCHBACK -> time = 25;
+            case PICKUP -> time= 50;
+            case COUPE -> time = 15;
         }
         return time;
     }

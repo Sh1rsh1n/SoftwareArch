@@ -1,6 +1,7 @@
-package ru.geekbrains.lesson3.fuel_stations;
+package ru.geekbrains.lesson3.supports.fuel_station;
 
-import ru.geekbrains.lesson3.type_params.FuelType;
+
+import ru.geekbrains.lesson3.car_models.parameters.FuelType;
 
 /**
  * Заправочная станция
