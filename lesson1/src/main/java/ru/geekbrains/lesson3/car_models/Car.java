@@ -25,7 +25,7 @@ public abstract class Car implements Cleanable {
     // пройденный путь
     private int tripDistance;
     
-    // Текущая скорость
+    // средняя скорость
     protected int averageSpeed;
     
     // максимальная скорость

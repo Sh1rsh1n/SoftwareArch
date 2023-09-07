@@ -17,8 +17,13 @@ public class CarWash implements Cleaning {
         return washTitle;
     }
 
+    /**
+     * метод, описывает мойку кузова.
+     * если входящий аргумент (Object obj) реализует интерфейс Cleanable
+     * "кастуем" Object в Car и выполняем действия
+     */
     @Override
-    public void washCar(Object obj) {
+    public void washBody(Object obj) {
         if (obj instanceof Cleanable) {
             Car car = (Car) obj;
             int wt = waitTime(car.getBodyType());
@@ -29,9 +34,16 @@ public class CarWash implements Cleaning {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+        } else {
+            throw new RuntimeException();
         }
     }
-
+    
+    /**
+     * метод, описывает уборку в салоне.
+     * если входящий аргумент (Object obj) реализует интерфейс Cleanable
+     * "кастуем" Object в Car и выполняем действия
+     */
     @Override
     public void cleanCarInside(Object obj){
         if (obj instanceof Cleanable) {
@@ -45,8 +57,14 @@ public class CarWash implements Cleaning {
                 throw new RuntimeException(e);
             }
         }
+        else {
+            throw new RuntimeException();
+        }
     }
     
+    /**
+     * метод, в зависимости от типа кузова, возвращает значение времени ожидания мойки
+     */
     private int waitTime(BodyType type) {
         int time = 0;
         switch (type) {

@@ -23,23 +23,42 @@ public class SportCar extends Car {
         return maxSpeed;
     }
     
+    public int getMaintenanceDistance(){
+        return maintenanceDistance;
+    }
+    
+    public void setMaintenanceDistance(int maintenanceDistance){
+        this.maintenanceDistance = maintenanceDistance;
+    }
+    
     @Override
     public void movement(){
+        
+        // средняя скорость
         averageSpeed = new Random().nextInt(maxSpeed);
         System.out.printf("Средняя скорость км/ч: %d\n", averageSpeed);
 
+        // вычислили пройденный путь и присвоили новое значение
         setTripDistance(getTripDistance() + averageSpeed);
         System.out.printf("Проехал: %d\n", getTripDistance());
 
+        /**
+         * вычислили количество потраченного топлива за пройденный путь
+         * чем выше средняя скорость тем больше расход
+         */
         setFuelLevel(getFuelLevel() - ((float) averageSpeed / maxSpeed / 3));
         System.out.printf("Остаток топлива: %f бака\n", getFuelLevel());
+        
+        // вычислили сколько осталось до ТО
+        setMaintenanceDistance(getMaintenanceDistance() - averageSpeed);
         
     }
     
     @Override
     public void maintenance(){
-        if (getTripDistance() > maintenanceDistance) {
-            maintenanceDistance *= 2;
+        // проверка необходимости ТО
+        if (getMaintenanceDistance() <= 0) {
+            maintenanceDistance = 3000;
             setNeedMaintenance(true);
             System.out.println("Пора делать ТО");
         }

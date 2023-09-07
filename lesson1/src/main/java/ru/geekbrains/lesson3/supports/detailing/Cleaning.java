@@ -5,7 +5,7 @@ import ru.geekbrains.lesson3.car_models.Car;
 
 public interface Cleaning {
 
-    void washCar(Object obj);
+    void washBody(Object obj);
 
     void cleanCarInside(Object obj);
 }

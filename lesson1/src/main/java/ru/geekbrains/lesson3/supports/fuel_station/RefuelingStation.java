@@ -10,6 +10,9 @@ public class RefuelingStation implements Refueling {
         this.title = title;
     }
 
+    /**
+     * метод, описание заправки а/м топливом, в зависимости от того накаком топливе работает а/м.
+     */
     @Override
     public void refuel(FuelType fuelType) {
         System.out.printf("Добро пожаловать на АЗС %s!!!\n", title);

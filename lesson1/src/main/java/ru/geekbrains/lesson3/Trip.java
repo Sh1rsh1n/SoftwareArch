@@ -30,8 +30,12 @@ public class Trip {
 
         System.out.printf("Начало путешествия на автомобиле %s %s\n", car.getBrand(), car.getModel());
         
+        // выполняется, пока поездка меньше либо равна пройденному пути а/м
         while(car.getTripDistance() <= tripDistance) {
-            car.movement();
+            
+            // а/м едет
+            car.movement(); 
+            // проверка нужен ли сервис
             car.maintenance();
 
             try {
@@ -40,25 +44,29 @@ public class Trip {
                 throw new RuntimeException(e);
             }
 
+            // если а/м пикап, проверяем уровень загрязнения кузова, едем на мойку
             if (car instanceof Pickup && ((Pickup) car).getDirtLevel() >= 0.5f) {
-                cleaning.washCar(car);
+                cleaning.washBody(car);
                 cleaning.cleanCarInside(car);
                 ((Pickup) car).setDirtLevel(0.0f);
             }
 
+            // необходимость в сервисе
             if (car.isNeedMaintenance()) {
-                cleaning.washCar(car);
+                cleaning.washBody(car);
                 cleaning.cleanCarInside(car);
                 maintenance.changeOil(car);
                 maintenance.changeFilters(car);
                 car.setNeedMaintenance(false);
             }
-
+            
+            // условие если уровень топлива меньше 0.0
             if (car.getFuelLevel() < 0) {
                 System.out.println("Закончился бензин. Дальше ехать нельзя.");
                 break;
             }
 
+            // условие если уровень топлива меньше 1/4 бака, то едем заправляться
             if (car.getFuelLevel() < 0.25f) {
                 refueling.refuel(car.getFuelType());
                 car.setFuelLevel(1.0f);
