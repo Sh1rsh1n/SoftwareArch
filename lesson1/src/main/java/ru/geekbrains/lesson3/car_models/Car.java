@@ -82,6 +82,10 @@ public abstract class Car implements Cleanable {
         return maxSpeed;
     }
 
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
     public float getFuelLevel() {
         return fuelLevel;
     }

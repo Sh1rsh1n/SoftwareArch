@@ -45,7 +45,7 @@ public class Trip {
             }
 
             // если а/м пикап, проверяем уровень загрязнения кузова, едем на мойку
-            if (car instanceof Pickup && ((Pickup) car).getDirtLevel() >= 0.5f) {
+            if (car instanceof Pickup && ((Pickup) car).getDirtLevel() >= 1.0f) {
                 cleaning.washBody(car);
                 cleaning.cleanCarInside(car);
                 ((Pickup) car).setDirtLevel(0.0f);

@@ -15,8 +15,9 @@ public class Pickup extends Car {
     // срочное ТО
     private boolean extraMaintenance;
 
-    public Pickup(String brand, String model, BodyType bodyType, CarColor color, FuelType fuelType) {
+    public Pickup(String brand, String model, BodyType bodyType, CarColor color, FuelType fuelType, int maxSpeed) {
         super(brand, model, bodyType, color, fuelType);
+        setMaxSpeed(maxSpeed);
         this.extraMaintenance = false;
         this.dirtLevel = 0.0f;
     }
@@ -40,7 +41,7 @@ public class Pickup extends Car {
         setTripDistance(getTripDistance() + averageSpeed);
         System.out.printf("Проехал: %d\n", getTripDistance());
 
-        /**
+        /*
          * вычислили количество потраченного топлива за пройденный путь
          * чем выше средняя скорость тем больше расход
          */

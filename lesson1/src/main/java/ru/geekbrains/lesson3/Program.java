@@ -7,7 +7,6 @@ import ru.geekbrains.lesson3.car_models.parameters.BodyType;
 import ru.geekbrains.lesson3.car_models.parameters.CarColor;
 import ru.geekbrains.lesson3.car_models.parameters.FuelType;
 import ru.geekbrains.lesson3.supports.detailing.CarWash;
-import ru.geekbrains.lesson3.supports.detailing.Cleaning;
 import ru.geekbrains.lesson3.supports.fuel_station.RefuelingStation;
 import ru.geekbrains.lesson3.supports.maintenance_station.MaintenanceStation;
 
@@ -63,15 +62,15 @@ public class Program {
      */
     public static void main(String[] args) {
 
-//        Car bmw = new SportCar("BMW", "M5", BodyType.COUPE, CarColor.GREEN, FuelType.GASOLINE, 250);
-//        Trip trip = new Trip(bmw, new RefuelingStation("Lukoil"), new CarWash("Super Detailing"), new MaintenanceStation("Official Dealer"), 15000);
-//
-//        trip.start();
+        Car bmw = new SportCar("BMW", "M5", BodyType.COUPE, CarColor.GREEN, FuelType.GASOLINE, 250);
+        Trip trip1 = new Trip(bmw, new RefuelingStation("Lukoil"), new CarWash("Super Detailing"), new MaintenanceStation("Official Dealer"), 15000);
 
-        Car car = new Pickup("TOYOTA", "SEQUOYA", BodyType.PICKUP, CarColor.WHITE, FuelType.DIESEL);
+        trip1.start();
 
-        Cleaning cleaning = new CarWash("self wash");
+        Car pickup = new Pickup("TOYOTA", "SEQUOYA", BodyType.PICKUP, CarColor.WHITE, FuelType.DIESEL, 150);
+        Trip trip2 = new Trip(pickup, new RefuelingStation("Gazprom"), new CarWash("Moi sam"), new MaintenanceStation("Uncle Vasya"), 5000);
 
-        cleaning.washCar(car);
+        trip2.start();
+
     }
 }
