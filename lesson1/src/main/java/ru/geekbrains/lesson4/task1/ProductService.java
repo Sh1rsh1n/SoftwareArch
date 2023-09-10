@@ -3,7 +3,6 @@ package ru.geekbrains.lesson4.task1;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 public class ProductService implements Readable {
 
