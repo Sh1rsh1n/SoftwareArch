@@ -48,6 +48,10 @@ public class DataBase {
         System.out.println("++ ПОКУПАТЕЛЬ УСПЕШНО ДОБАВЛЕН В БД ++");
     }
 
+    /**
+     * присваиваем покупателя указанному билету (продаем билет)
+     * @param customer
+     */
     public void setCustomerToTicket(Customer customer) {
         for (Ticket ticket: ticketList) {
             if (ticket.getCustomer() == null) {
@@ -59,6 +63,12 @@ public class DataBase {
         System.out.println("Все билеты проданы.");
     }
 
+    /**
+     * возвращаем билет поиск по покупателю
+     * @param customer
+     * @return
+     * @throws TicketNotFoundException
+     */
     public Ticket getTicketByCustomer(Customer customer) throws TicketNotFoundException {
         for (Ticket ticket: ticketList) {
             if (ticket.getCustomer().equals(customer)) {
@@ -68,6 +78,10 @@ public class DataBase {
         throw new TicketNotFoundException("Билет не найден.");
     }
 
+    /**
+     * список всех билетов
+     * @return
+     */
     public List<Ticket> getTicketList() {
         return List.copyOf(ticketList);
     }

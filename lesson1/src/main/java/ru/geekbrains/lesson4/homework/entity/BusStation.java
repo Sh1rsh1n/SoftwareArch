@@ -11,6 +11,12 @@ public class BusStation {
         this.ticketProvider = ticketProvider;
     }
 
+    /**
+     * проверка секретного кода
+     * @param id
+     * @param secretCode
+     * @return
+     */
     public boolean checkTicket(int id, String secretCode){
         return ticketProvider.checkTicket(id, secretCode);
     }

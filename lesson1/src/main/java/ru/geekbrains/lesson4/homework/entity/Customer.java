@@ -27,8 +27,8 @@ public class Customer{
         this.id = ++incrementId;
         this.name = name;
         this.surname = surname;
-        login = surname.charAt(0) + name;
-        password = String.valueOf(name.length()) + surname.length();
+        login = surname.charAt(0) + name; // логин первая буква фамилии и имя покупателя
+        password = String.valueOf(name.length()) + surname.length(); // пароль конкатенация длин имени и фамилии
     }
 
     public String getName() {

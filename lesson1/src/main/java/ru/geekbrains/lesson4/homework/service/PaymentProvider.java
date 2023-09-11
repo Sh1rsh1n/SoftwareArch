@@ -32,4 +32,8 @@ public class PaymentProvider {
         System.out.println("== НЕВЕРНЫЕ ДАННЫЕКРЕДИТНОЙ КАРТЫ ПОКУПАТЕЛЯ ==\n== ТРАНЗАКЦИЯ ОТМЕНЕНА ==");
         return false;
     }
+
+    public Bank getBank() {
+        return bank;
+    }
 }

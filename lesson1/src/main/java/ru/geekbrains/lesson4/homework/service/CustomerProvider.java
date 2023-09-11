@@ -1,23 +1,18 @@
 package ru.geekbrains.lesson4.homework.service;
 
-import ru.geekbrains.lesson4.homework.entity.Bank;
 import ru.geekbrains.lesson4.homework.entity.Customer;
 import ru.geekbrains.lesson4.homework.entity.DataBase;
-
 
 public class CustomerProvider {
 
     private DataBase dataBase;
 
-    private Bank bank;
-
-    public CustomerProvider(DataBase dataBase, Bank bank) {
+    public CustomerProvider(DataBase dataBase) {
         this.dataBase = dataBase;
-        this.bank = bank;
     }
 
     /**
-     * проверка логина покупателя в БД
+     * проверка логина и пароля покупателя в БД
      *
      * @param login    логин
      * @param password пароль
@@ -47,7 +42,6 @@ public class CustomerProvider {
             }
         }
         dataBase.addCustomerToDataBase(customer);
-        bank.setCustomerToCard(customer);
     }
 
     /**

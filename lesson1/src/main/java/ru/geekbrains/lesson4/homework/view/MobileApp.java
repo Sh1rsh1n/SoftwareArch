@@ -14,6 +14,11 @@ public class MobileApp implements ServiceConnection {
         System.out.println("Покупка билетов через мобильное приложение");
     }
 
+    /**
+     * подключение к API
+     * тут может быть какое-то подключение к удаленному сервису
+     * например: по адресу, порту, токену
+     */
     @Override
     public void apiConnect() {
         ticketServiceApi.connect();

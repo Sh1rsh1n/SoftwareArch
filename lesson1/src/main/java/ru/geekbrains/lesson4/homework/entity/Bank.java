@@ -12,6 +12,9 @@ public class Bank {
 
     private final Map<Integer, CreditCard> cards;
 
+    /**
+     * генерация пустых кредитных карт (без покупателя)
+     */
     public Bank() {
         cards = new HashMap<>();
         for (int i = 1; i < 10; i++) {

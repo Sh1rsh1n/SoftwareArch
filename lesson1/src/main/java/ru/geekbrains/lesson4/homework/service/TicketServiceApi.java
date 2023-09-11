@@ -22,9 +22,10 @@ public class TicketServiceApi {
         this.busStation = busStation;
     }
 
+    /**
+     * API для взаимодействия с пользовательским приложением
+     */
     public void connect() {
-
-        System.out.println("");
 
         Scanner scanner = new Scanner(System.in);
         String value;
@@ -51,6 +52,7 @@ public class TicketServiceApi {
                     customerProvider.addNewCustomerToDataBase(customer);
                     System.out.printf("Ваш логин: %s Пароль: %s\n", customer.getLogin(), customer.getPassword());
                     System.out.println("Чтобы купить билет нужно войти заново");
+                    ticketProvider.getPaymentProvider().getBank().setCustomerToCard(customer);
                     break;
                 }
 
@@ -109,8 +111,6 @@ public class TicketServiceApi {
                     break;
                 }
             }
-
-
         }
     }
 }

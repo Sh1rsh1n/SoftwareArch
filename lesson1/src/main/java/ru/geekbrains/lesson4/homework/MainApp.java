@@ -24,7 +24,7 @@ public class MainApp {
 
 
         // инициализация сервиса обращения к БД покупателей
-        CustomerProvider customerProvider = new CustomerProvider(dataBase, bank);
+        CustomerProvider customerProvider = new CustomerProvider(dataBase);
 
         // инициализация сервиса обращения к БД билетов
         TicketProvider ticketProvider = new TicketProvider(dataBase, paymentProvider);
@@ -35,6 +35,7 @@ public class MainApp {
         // инициализация API для работы с клиентским приложением(MobileApp)
         TicketServiceApi ticketServiceApi = new TicketServiceApi(ticketProvider, customerProvider, busStation);
 
+        // запуск приложения
         new MobileApp(ticketServiceApi).apiConnect();
     }
 }
