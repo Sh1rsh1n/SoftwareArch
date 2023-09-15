@@ -14,7 +14,6 @@ public class DataBase {
     {
         for (int i = 0; i < 10; i++) {
             ticketList.add(new Ticket());
-            System.out.println(ticketList.get(i));
         }
     }
 
