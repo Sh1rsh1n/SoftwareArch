@@ -11,11 +11,10 @@ import java.util.Optional;
 
 public class ConcreteNoteEditor implements NoteEditor {
 
-    private final NotesDatabaseContext dbContext;
-    private final NotesPresenter notesPresenter;
+    private NotesDatabaseContext dbContext;
+    private NotesPresenter notesPresenter;
 
-    public ConcreteNoteEditor(NotesDatabaseContext dbContext,
-                              NotesPresenter notesPresenter) {
+    public ConcreteNoteEditor(NotesDatabaseContext dbContext, NotesPresenter notesPresenter) {
         this.dbContext = dbContext;
         this.notesPresenter = notesPresenter;
     }

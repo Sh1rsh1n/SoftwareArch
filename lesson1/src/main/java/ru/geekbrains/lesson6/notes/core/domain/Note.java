@@ -1,9 +1,27 @@
 package ru.geekbrains.lesson6.notes.core.domain;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Note {
-    
+
+    @Override
+    public boolean equals(Object o) {
+        Note note = (Note) o;
+        return id == note.id;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + userId;
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (details != null ? details.hashCode() : 0);
+        result = 31 * result + (creationDate != null ? creationDate.hashCode() : 0);
+        result = 31 * result + (editDate != null ? editDate.hashCode() : 0);
+        return result;
+    }
+
     @Override
     public String toString() {
         return "Note{" +
@@ -15,12 +33,12 @@ public class Note {
 
     //region Constructors
 
-    public Note(int id, int userId, String title, String details, Date creationDate) {
+    public Note(int id, int userId, String title, String details) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.details = details;
-        this.creationDate = creationDate;
+        this.creationDate = new Date();
     }
 
     //endregion

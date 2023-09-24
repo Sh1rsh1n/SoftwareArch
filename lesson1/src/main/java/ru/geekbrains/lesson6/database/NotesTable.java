@@ -1,26 +1,27 @@
 package ru.geekbrains.lesson6.database;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Random;
+import ru.geekbrains.lesson6.notes.core.domain.Note;
+
+import java.util.*;
 
 public class NotesTable {
 
     private Random random = new Random();
 
-    private Collection<NotesRecord> records;
+    private List<NotesRecord> records;
 
-    public Collection<NotesRecord> getRecords() {
-        if (records == null)
-        {
+    public NotesTable() {
+        if (records == null) {
             records = new ArrayList<>();
-            int recordsCount =  5  + random.nextInt(10);
-            for (int i = 0; i < recordsCount; i++){
+            int recordsCount = 5 + random.nextInt(10);
+            for (int i = 0; i < recordsCount; i++) {
                 records.add(new NotesRecord("title #" + i, "details #" + i));
             }
         }
-        return records;
     }
 
+    public List<NotesRecord> getRecords() {
+        return records;
+    }
 
 }

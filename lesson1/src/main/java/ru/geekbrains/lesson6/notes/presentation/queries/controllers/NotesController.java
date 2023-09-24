@@ -19,6 +19,10 @@ public class NotesController extends Controller{
         this.notesEditor.remove(note);
     }
 
+    public void routeEditNote(Note note) {
+        this.notesEditor.edit(note);
+    }
+
     public void routeGetAll(){
         this.notesEditor.printAll();
     }
