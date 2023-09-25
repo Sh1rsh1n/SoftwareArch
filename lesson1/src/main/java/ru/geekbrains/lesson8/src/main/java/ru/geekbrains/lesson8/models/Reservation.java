@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson8.models;
+package ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8.models;
 
 import java.util.Date;
 

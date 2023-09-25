@@ -1,10 +1,11 @@
-package ru.geekbrains.lesson8;
+package ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8;
 
-import ru.geekbrains.lesson8.models.TableModel;
-import ru.geekbrains.lesson8.presenters.BookingPresenter;
-import ru.geekbrains.lesson8.presenters.Model;
-import ru.geekbrains.lesson8.presenters.View;
-import ru.geekbrains.lesson8.views.BookingView;
+
+import ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8.models.TableModel;
+import ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8.presenters.BookingPresenter;
+import ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8.presenters.Model;
+import ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8.presenters.View;
+import ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8.views.BookingView;
 
 import java.util.Date;
 
@@ -23,8 +24,14 @@ public class Main {
         presenter.updateUIShowTables();
 
         view.reservationTable(new Date(), 2, "Станислав");
+        view.reservationTable(new Date(), 4, "Станислав");
 
-        //view.changeReservationTable(1001, new Date, 3, "Станислав");
+        presenter.updateUIShowTables();
+
+        view.changeReservationTable(1001, new Date(), 3, "Станислав");
+        view.changeReservationTable(1002, new Date(), 5, "Станислав");
+
+        presenter.updateUIShowTables();
+
     }
-
 }

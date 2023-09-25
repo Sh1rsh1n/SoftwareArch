@@ -1,8 +1,7 @@
-package ru.geekbrains.lesson8.presenters;
+package ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8.presenters;
 
-import ru.geekbrains.lesson8.models.Table;
-import ru.geekbrains.lesson8.models.TableModel;
-import ru.geekbrains.lesson8.views.BookingView;
+
+import ru.geekbrains.lesson8.src.main.java.ru.geekbrains.lesson8.models.Table;
 
 import java.util.Collection;
 import java.util.Date;
@@ -47,10 +46,15 @@ public class BookingPresenter implements ViewObserver {
         try {
             int reservationNo = model.reservationTable(orderDate, tableNo, name);
             updateUIShowReservationTableResult(reservationNo);
-
         }
         catch (RuntimeException e){
             updateUIShowReservationTableResult(-1);
         }
+    }
+
+    @Override
+    public void changeReservationTable(int noOldReservation, Date orderDate, int tableNo, String name) {
+        int reservationNo = model.changeReservationTable(noOldReservation, orderDate, tableNo, name);
+        updateUIShowReservationTableResult(reservationNo);
     }
 }
